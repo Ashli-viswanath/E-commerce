@@ -3,12 +3,9 @@ import React from "react";
 import Product from "./Product/Product";
 import useStyles from "./styles";
 
-const products = [
-  { id: 1, name: "Shoes", description: "Running shoes" , price: 100},
-  { id: 2, name: "MacBook Pro", description: "Apple laptop" , price: 200},
-];
+;
 
-const Products = () => {
+const Products = ({ products }) => {
   const classes = useStyles();
   return (
     <main className={classes.content}>
