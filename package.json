@@ -11,7 +11,12 @@
   },
   "dependencies": {
     "@chec/commerce.js": "^2.8.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
+    "@mui/styles": "^5.15.15",
     "@stripe/react-stripe-js": "^2.7.0",
     "@stripe/stripe-js": "^3.3.0",
     "react": "^18.2.0",

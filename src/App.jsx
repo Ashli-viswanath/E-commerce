@@ -1,3 +1,4 @@
+import Products from "./components/Products"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-    heyy
+  <Products/>
     </>
   )
 }
