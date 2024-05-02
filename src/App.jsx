@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar totalItems={cart.total_items} />
       <Products products={products} onAddToCart={handleAddToCart} />
     </>
   );
