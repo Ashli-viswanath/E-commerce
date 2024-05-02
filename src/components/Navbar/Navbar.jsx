@@ -3,11 +3,9 @@ import React from "react";
 import logo from "../../assets/commerce.png";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import useStyles from "./styles";
-const Navbar = ({totalItems}) => {
-    const classes = useStyles();
+const Navbar = ({ totalItems }) => {
+  const classes = useStyles();
   return (
-    
-
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>

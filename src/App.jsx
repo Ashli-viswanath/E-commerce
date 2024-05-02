@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
-import Products from "./components/Products/Products";
 import { commerce } from "./lib/commerce";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -24,11 +24,12 @@ function App() {
     fetchProducts();
     fetchCart();
   }, []);
-
+  console.log(cart);
   return (
     <>
       <Navbar totalItems={cart.total_items} />
-      <Products products={products} onAddToCart={handleAddToCart} />
+      {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
+      <Cart cart={cart} />
     </>
   );
 }
