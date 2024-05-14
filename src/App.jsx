@@ -4,6 +4,7 @@ import { commerce } from "./lib/commerce";
 import Cart from "./components/Cart/Cart";
 import { Route, Routes } from "react-router-dom";
 import Products from "./components/Products/Products";
+import Checkout from "./components/CheckoutForm/Checkout/Checkout";
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
@@ -61,6 +62,7 @@ function App() {
               />
             }
           />
+          <Route exact path="/checkout" element={<Checkout/>} />
         </Routes>
       </div>
     </>
