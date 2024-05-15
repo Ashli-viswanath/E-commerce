@@ -6,7 +6,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 
 const stripePromise = loadStripe(import.meta.env.VITE_REACT_APP_STRIPE_PUBLIC_KEY);
-const PaymentForm = ({checkoutToken, backStep, onCaptureCheckout,nextstep }) => {
+const PaymentForm = ({checkoutToken, backStep, onCaptureCheckout,nextstep ,timeOut}) => {
   const handleSubmit = async(e, elements, stripe) => {
     e.preventDefault();
     if(!stripe || !elements) return;
@@ -43,6 +43,7 @@ const PaymentForm = ({checkoutToken, backStep, onCaptureCheckout,nextstep }) => 
         }
       } 
       onCaptureCheckout(checkoutToken.id, orderData);
+      timeOut();
       nextstep();
     }
   }
