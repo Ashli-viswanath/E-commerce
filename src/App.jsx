@@ -37,11 +37,13 @@ function App() {
     fetchProducts();
     fetchCart();
   }, []);
-  console.log(cart);
+  // console.log(cart)
+  // console.log(cart.line_items);
+  // console.log(cart.total_items)
   return (
     <>
       <div>
-        <Navbar totalItems={cart.total_items} />
+        <Navbar totalItems={cart ? cart.total_items : 0} />
         <Routes>
           <Route
             exact

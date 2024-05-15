@@ -14,12 +14,12 @@ const AddressForm = ({ checkoutToken }) => {
     id: code,
     label: name,
   }));
-  console.log(countries);
+  //console.log(countries);
   const fetchShippingCountries = async (checkoutTokenId) => {
     const { countries } = await commerce.services.localeListShippingCountries(
       checkoutTokenId
     );
-    console.log(countries);
+    //  console.log(countries);
     setShippingCountries(countries);
     setShippingCountry(Object.keys(countries)[0]);
   };
@@ -33,7 +33,7 @@ const AddressForm = ({ checkoutToken }) => {
         Shipping address
       </Typography>
       <FormProvider {...methods}>
-        <form onSubmit="">
+        <form>
           <Grid container>
             <FormInput name="firstName" label="First name" required />
             <FormInput name="lastName" label="Last name" required />

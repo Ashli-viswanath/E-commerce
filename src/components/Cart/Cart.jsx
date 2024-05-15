@@ -25,15 +25,16 @@ const Cart = ({
     return (
       <>
         <Grid container spacing={3}>
-          {cart.line_items.map((item) => (
-            <Grid item xs={12} sm={4} key={item.id}>
-              <CartItem
-                item={item}
-                onUpdateCartQty={handleUpdateCartQty}
-                onremoveFromCart={handleRemoveFromCart}
-              />
-            </Grid>
-          ))}
+          {cart &&
+            cart.line_items.map((item) => (
+              <Grid item xs={12} sm={4} key={item.id}>
+                <CartItem
+                  item={item}
+                  onUpdateCartQty={handleUpdateCartQty}
+                  onRemoveFromCart={handleRemoveFromCart}
+                />
+              </Grid>
+            ))}
         </Grid>
 
         <div className={classes.cardDetails}>
@@ -69,7 +70,7 @@ const Cart = ({
     );
   };
 
-  if (!cart.line_items) return <div>Loading</div>;
+  if (!cart || !cart.line_items) return <div>Loading</div>;
 
   return (
     <Container>
