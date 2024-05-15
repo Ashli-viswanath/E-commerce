@@ -1,6 +1,7 @@
 import {
   Button,
   CircularProgress,
+  CssBaseline,
   Divider,
   Paper,
   Step,
@@ -13,13 +14,14 @@ import useStyles from "./styles";
 import AddressForm from "../AddressForm";
 import PaymentForm from "../PaymentForm";
 import { commerce } from "../../../lib/commerce";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 const steps = ["Shipping Address", "Payment Details"];
 const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});
   const classes = useStyles();
+  const history = useHistory();
   useEffect(() => {
     const generateToken = async () => {
       try {
@@ -32,7 +34,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
           setCheckoutToken(token);
         }
       } catch (error) {
-        console.log(error);
+        history.pushState("/");
       }
     };
 
@@ -93,6 +95,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   }
   return (
     <>
+      <CssBaseline />
       <div className={classes.toolbar} />
       <main className={classes.layout}>
         <Paper className={classes.paper}>
