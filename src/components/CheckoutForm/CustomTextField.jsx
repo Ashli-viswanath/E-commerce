@@ -1,5 +1,4 @@
 import { Grid, TextField } from "@mui/material";
-import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
 const FormInput = ({ name, label }) => {
@@ -10,11 +9,17 @@ const FormInput = ({ name, label }) => {
         name={name}
         control={control}
         render={({ field }) => (
-          <TextField {...field} fullWidth label={label} required />
+          <TextField
+            {...field}
+            value={field.value} // Ensure value is set for controlled input
+            onChange={field.onChange} // Ensure onChange is set for controlled input
+            fullWidth
+            label={label}
+            required
+          />
         )}
       />
     </Grid>
   );
 };
-
 export default FormInput;
